@@ -18,8 +18,8 @@ public class MantisTest extends TestBase {
     public void loginSuccessfully(){
         loginPage = new LoginPage(driver);
 
-        loginPage.setUsername("theron.santos");
-        loginPage.setPassword("148623tH@");
+        loginPage.setUsername("usuario");
+        loginPage.setPassword("senha");
         loginPage.setLogin();
 
         assertEquals("Logout", loginPage.getMessageLoginSucess());
@@ -31,8 +31,8 @@ public class MantisTest extends TestBase {
 
         loginPage = new LoginPage(driver);
 
-        loginPage.setUsername("theron.santos");
-        loginPage.setPassword("148623tH");
+        loginPage.setUsername("usuario");
+        loginPage.setPassword("senha");
         loginPage.setLogin();
 
         assertEquals(msg,loginPage.getMessageLoginFailed());
@@ -43,8 +43,8 @@ public class MantisTest extends TestBase {
         loginPage = new LoginPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
 
-        loginPage.setUsername("theron.santos");
-        loginPage.setPassword("148623tH@");
+        loginPage.setUsername("usuario");
+        loginPage.setPassword("senha");
         loginPage.setLogin();
 
         reportIssuePage.setClickReportIssue();
@@ -65,8 +65,8 @@ public class MantisTest extends TestBase {
         loginPage = new LoginPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
 
-        loginPage.setUsername("theron.santos");
-        loginPage.setPassword("148623tH@");
+        loginPage.setUsername("usuario");
+        loginPage.setPassword("senha");
         loginPage.setLogin();
 
         reportIssuePage.setClickReportIssue();
@@ -81,8 +81,8 @@ public class MantisTest extends TestBase {
         loginPage = new LoginPage(driver);
         viewIssuePage = new ViewIssuePage(driver);
 
-        loginPage.setUsername("theron.santos");
-        loginPage.setPassword("148623tH@");
+        loginPage.setUsername("usuario");
+        loginPage.setPassword("senha");
         loginPage.setLogin();
 
         viewIssuePage.setClickViewIssue();
