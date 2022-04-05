@@ -1,6 +1,7 @@
 package tests;
 
 import bases.TestBase;
+import flows.LoginFlow;
 import org.junit.*;
 import pages.LoginPage;
 import pages.ReportIssuePage;
@@ -13,39 +14,35 @@ public class MantisTest extends TestBase {
     LoginPage loginPage;
     ReportIssuePage reportIssuePage;
     ViewIssuePage viewIssuePage;
+    LoginFlow loginFlow;
 
     @Test
     public void loginSuccessfully(){
         loginPage = new LoginPage(driver);
+        loginFlow = new LoginFlow(driver);
 
-        loginPage.setUsername("usuario");
-        loginPage.setPassword("senha");
-        loginPage.setLogin();
-
+        loginFlow.setLoginService("usuario","senha");
         assertEquals("Logout", loginPage.getMessageLoginSucess());
     }
 
     @Test
     public void loginFailed(){
-        String msg = "Your account may be disabled or blocked or the username/password you entered is incorrect.";
-
         loginPage = new LoginPage(driver);
+        loginFlow = new LoginFlow(driver);
 
-        loginPage.setUsername("usuario");
-        loginPage.setPassword("senha");
-        loginPage.setLogin();
+        loginFlow.setLoginService("usuario","senha");
+
+        String msg = "Your account may be disabled or blocked or the username/password you entered is incorrect.";
 
         assertEquals(msg,loginPage.getMessageLoginFailed());
     }
 
     @Test
     public void registerIssue(){
-        loginPage = new LoginPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
+        loginFlow = new LoginFlow(driver);
 
-        loginPage.setUsername("usuario");
-        loginPage.setPassword("senha");
-        loginPage.setLogin();
+        loginFlow.setLoginService("usuario","senha");
 
         reportIssuePage.setClickReportIssue();
         reportIssuePage.setProject();
@@ -62,12 +59,10 @@ public class MantisTest extends TestBase {
 
     @Test
     public void registerIssueFailed() {
-        loginPage = new LoginPage(driver);
         reportIssuePage = new ReportIssuePage(driver);
+        loginFlow = new LoginFlow(driver);
 
-        loginPage.setUsername("usuario");
-        loginPage.setPassword("senha");
-        loginPage.setLogin();
+        loginFlow.setLoginService("usuario","senha");
 
         reportIssuePage.setClickReportIssue();
         reportIssuePage.setClickBtnSelectProject();
@@ -78,12 +73,10 @@ public class MantisTest extends TestBase {
 
     @Test
     public void viewIssue(){
-        loginPage = new LoginPage(driver);
         viewIssuePage = new ViewIssuePage(driver);
+        loginFlow = new LoginFlow(driver);
 
-        loginPage.setUsername("usuario");
-        loginPage.setPassword("senha");
-        loginPage.setLogin();
+        loginFlow.setLoginService("usuario","senha");
 
         viewIssuePage.setClickViewIssue();
         viewIssuePage.getViewIssue();
