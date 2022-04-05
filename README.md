@@ -7,9 +7,11 @@ Desafio de criar script de automação utilizando as melhores práticas menciona
 <br>
 IDE: Intellij;
 <br>
-Linguagem de programção: Java 1.8
+Linguagem de programção: Java 1.8;
 <br>
-Testes: Junit (framework de testes para Java)
+Testes: Junit (framework de testes para Java);
+<br>
+Selenium WebDriver: framework de automação de testes web;
 <br>
 Page Object: Padrão para desenvolvimento de automação, onde cada página é criada uma classe que é responsável pelo mapeamento de cada componente.
 <br>
